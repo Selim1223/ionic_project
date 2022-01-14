@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/hotels"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="hotel">{{hotel.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="setModif()">Rendre Modifiable</ion-button>
+  <div *ngIf="!modif">
+    <ion-grid *ngIf="hotel">
+      <ion-row>
+        <ion-col>
+          <strong>Disponible</strong>
+          <ion-icon *ngIf="hotel.onAir" name="checkmark"></ion-icon>
+          <ion-icon *ngIf="!hotel.onAir" name="close-circle"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="onDelete(hotel.id)">
+            <ion-icon name="trash"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <img [src]="hotel.pictureLink">
+        </ion-col>
+        <ion-col size="6">
+          <strong>Nom de l'hotel : </strong> <br>
+          {{hotel.title}} <br>
+          <strong>Pays</strong> <br>
+          {{hotel.country}} <br>
+          <strong>Adresse</strong> <br>
+          {{hotel.adresse}} <br>
+          <strong>Durée de séjour (jours)</strong> <br>
+          {{hotel.time}} <br>
+          <strong>Début du séjour</strong> <br>
+          {{hotel.startOfStay}} <br>
+          <strong>Fin du séjour</strong> <br>
+          {{hotel.endOfStay}} <br>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <strong>Capacité de la chambre (personnes)</strong><br>
+          {{hotel.capacity}} <br>
+        </ion-col>
+        <ion-col>
+          <strong>Tarif (en euros)</strong> <br>
+          {{hotel.rate}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <strong>description</strong> <br>
+          <p>
+            {{hotel.description}}
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngIf="modif && hotel">
+    <ion-item>
+      <ion-label>Photo de l'hotel</ion-label>
+      <ion-input type="text" [(ngModel)]="hotel.pictureLink"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Titre</ion-label>
+      <ion-input type="text" [(ngModel)]="hotel.title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Pays</ion-label>
+      <ion-input type="text" [(ngModel)]="hotel.country"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Adresse</ion-label>
+      <ion-input type="text" [(ngModel)]="hotel.adresse"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Durée de séjour (jours)</ion-label>
+      <ion-input type="text" [(ngModel)]="hotel.time"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Début du séjour</ion-label>
+      <ion-input type="text" [(ngModel)]="hotel.startOfStay"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Fin du séjour</ion-label>
+      <ion-input type="text" [(ngModel)]="hotel.endOfStay"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Capacité de la chambre (personnes)</ion-label>
+      <ion-input type="text" [(ngModel)]="hotel.capacity"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tarif (en euros)</ion-label>
+      <ion-input type="text" [(ngModel)]="hotel.rate"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Disponible ?</ion-label>
+      <ion-toggle [(ngModel)]="hotel.onAir"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>description</ion-label>
+      <ion-textarea rows="20" [(ngModel)]="hotel.description"></ion-textarea>
+    </ion-item>
+    <p class="text-center">
+      <ion-button (click)="onModif()">Modifier</ion-button>
+    </p>
+  </div>
+</ion-content>

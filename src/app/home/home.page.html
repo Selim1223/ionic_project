@@ -1,14 +1,81 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-     Hotels App
+      Hotels App
     </ion-title>
   </ion-toolbar>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="home.page.scss">
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <div style="text-align: center">
+    <h1>
+      Bienvenue sur RéserveTonHotel.com !
+    </h1>
+  </div>
+  <ion-row>
+    <ion-col>
+      <img src="assets/imgs/ReserveTonHotel.jpg">
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <h2>Présentation :</h2>
+      <p>Le site reserveTonHotel.com est fait pour vous !
+
+        Vous pourrez choisir parmis une multitudes de pays et de régions à travers le monde,
+        à des prix défiants toutes concurrences !
+        Vous pourrez réserver à l'avance vos voyages et choisir aussi votre modalité de payement !
+        Partagez nous votre boite mail afin que l'on puisse vous envoyer des réductions et des promotions sur vos
+        prochains voyages !
+
+        Notre site est grandement référencé. Des milliers d'internautes nous font déjà confiance et nous renvoie de
+        bonnes remarques, soyez le prochain ! </p>
+    </ion-col>
+  </ion-row>
 </ion-content>
 
-<ion-footer>
-  <p>Pied de page</p>
-</ion-footer>
+<div class="footer-clean">
+  <ion-footer>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-4 col-md-3 item">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="#">Web design</a></li>
+            <li><a href="#">Development</a></li>
+            <li><a href="#">Hosting</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-4 col-md-3 item">
+          <h3>About</h3>
+          <ul>
+            <li><a href="#">Company</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">Legacy</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-4 col-md-3 item">
+          <h3>Careers</h3>
+          <ul>
+            <li><a href="#">Job openings</a></li>
+            <li><a href="#">Employee success</a></li>
+            <li><a href="#">Benefits</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 item social"><a href="https://fr-fr.facebook.com/"><i
+              class="icon ion-social-facebook"></i></a><a href="https://twitter.com/home"><i
+              class="icon ion-social-twitter"></i></a><a href="https://www.snapchat.com/"><i
+              class="icon ion-social-snapchat"></i></a><a href="https://www.instagram.com/?hl=fr"><i
+              class="icon ion-social-instagram"></i></a>
+          <p class="copyright">RéserveTonHotel.com © 2018</p>
+        </div>
+      </div>
+    </div>
+  </ion-footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
